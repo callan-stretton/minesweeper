@@ -7,31 +7,31 @@ document.addEventListener('DOMContentLoaded', startGame)
        hidden: true,
        row: 1,
        col: 1,
-       isMine: true
+       isMine: false
      },
      { //2
        hidden: true,
        row: 1,
        col: 2,
-       isMine: true
+       isMine: false
      },
      { //3
        hidden: true,
        row: 1,
        col: 3,
-       isMine: true
+       isMine: false
      },
      { //4
        hidden: true,
        row: 2,
        col: 1,
-       isMine: true
+       isMine: false
      },
      { //5
        hidden: true,
        row: 2,
        col: 2,
-       isMine: true
+       isMine: false
      },
      { //6
        hidden: true,
@@ -49,13 +49,13 @@ document.addEventListener('DOMContentLoaded', startGame)
        hidden: true,
        row: 3,
        col: 2,
-       isMine: true
+       isMine: false
      },
      { //9
        hidden: true,
        row: 3,
        col: 3,
-       isMine: true
+       isMine: false 
      }
    ]
  }
