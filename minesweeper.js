@@ -5,57 +5,57 @@ document.addEventListener('DOMContentLoaded', startGame)
    cells: [
      { //1
        hidden: true,
-       row: 1,
-       col: 1,
+       row: 0,
+       col: 0,
        isMine: false
      },
      { //2
        hidden: true,
-       row: 1,
-       col: 2,
+       row: 0,
+       col: 1,
        isMine: false
      },
      { //3
        hidden: true,
-       row: 1,
-       col: 3,
+       row: 0,
+       col: 2,
        isMine: false
      },
      { //4
        hidden: true,
-       row: 2,
-       col: 1,
+       row: 1,
+       col: 0,
        isMine: false
      },
      { //5
        hidden: true,
-       row: 2,
-       col: 2,
+       row: 1,
+       col: 1,
        isMine: false
      },
      { //6
        hidden: true,
-       row: 2,
-       col: 3,
+       row: 1,
+       col: 2,
        isMine: true
      },
      { //7
        hidden: true,
-       row: 3,
-       col: 1,
+       row: 2,
+       col: 0,
        isMine: true
      },
      { //8
        hidden: true,
-       row: 3,
-       col: 2,
+       row: 2,
+       col: 1,
        isMine: false
      },
      { //9
        hidden: true,
-       row: 3,
-       col: 3,
-       isMine: false 
+       row: 2,
+       col: 2,
+       isMine: false
      }
    ]
  }
