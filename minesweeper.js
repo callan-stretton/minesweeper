@@ -109,7 +109,7 @@ function countSurroundingMines (cell) {
   var count = 0;
 
   for (var j = 0; j < surroundingCells.length; j ++){
-    if (surroundingCells[j].isMine === true) {
+    if (surroundingCells[j].isMine) { // the same as saying surroundingCells[j].isMine === true
       //console.log(j);
       count ++;
     }
