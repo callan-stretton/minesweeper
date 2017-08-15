@@ -68,20 +68,14 @@ document.addEventListener('DOMContentLoaded', startGame)
  7 | 8 | 9
  */
 
+var allCellsArray = board.cells; //declaring a variable for the array that holds the objects/cells
+
 function startGame () {
   // Don't remove this function call: it makes the game work!
-  var allCellsArray = board.cells;
-  //console.log(allCellsArray);
 
-
-
-  for (var i = 0; i < allCellsArray.length; i ++){
-    console.log(allCellsArray[i]);
-    countSurroundingMines (allCellsArray[i]);
-
-    //add(allCellsArray[i].surroundingMines)
-    //var result = countSurroundingMines(i);
-    //board.cells.surroundingMines = result;
+  for (var i = 0; i < allCellsArray.length; i ++){ // loops through by the number of objects/cells in the array
+    //console.log(allCellsArray[i]); // console.logs the current object/cell within the array - for reference
+    allCellsArray[i].surroundingMines = countSurroundingMines(allCellsArray[i]); // creates a surroundingMines property with the results of the countSurroundingMines function
   }
 
 
@@ -108,6 +102,13 @@ function checkForWin () {
 // It will return cell objects in an array. You should loop through
 // them, counting the number of times `cell.isMine` is true.
 function countSurroundingMines (cell) {
-  var result = //insert equation here, ALLME 2 lines;
-  return result;
+
+  var surroundingCells = lib.getSurroundingCells(cell.row, cell.col);
+  console.log(surroundingCells);
+
+  //Think about how to get row and col out of your cell object: remember dot and bracket notation?
+  //You're going to have to loop through the surrounding cells returned from getSurroundingCells, checking each one to see if it's a mine and adding to a count variable if it is.
+  //Once you have the correct count, return it (return count).
+  //Make this function return the number of cells around the current cell that have the isMine property set to true
+  //the result will come out when called
 }
