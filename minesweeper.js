@@ -72,6 +72,10 @@ var allCellsArray = board.cells; //declaring a variable for the array that holds
 
 function startGame () {
   // Don't remove this function call: it makes the game work!
+  document.addEventListener('click', checkForWin);
+  document.addEventListener('contextmenu', checkForWin);
+  //document.addEventListener('click', checkForWin());
+  //document.addEventListener('contextmenu', checkForWin());
 
   for (var i = 0; i < allCellsArray.length; i ++){ // loops through by the number of objects/cells in the array
     //console.log(allCellsArray[i]); // console.logs the current object/cell within the array - for reference
@@ -87,7 +91,16 @@ function startGame () {
 // 1. Are all of the cells that are NOT mines visible?
 // 2. Are all of the mines marked?
 function checkForWin () {
-
+  for (var i = 0; i < allCellsArray.length; i ++){
+    if ((!allCellsArray[i].hidden) && (!allCellsArray[i].isMine)) { // cell is visible and not a mine
+      //console.log('this one is not a mine and its visible');
+    } else if (allCellsArray[i].isMine && allCellsArray[i].isMarked) { // cell is a mine and marked
+      //console.log('this one is a mine and its marked');
+    } else { // otherwise, not won yet
+      return; // exit this function
+    }
+  }
+  lib.displayMessage('You win!');
   // You can use this function call to declare a winner (once you've
   // detected that they've won, that is!)
   //   lib.displayMessage('You win!')
@@ -104,14 +117,14 @@ function checkForWin () {
 function countSurroundingMines (cell) {
 
   var surroundingCells = lib.getSurroundingCells(cell.row, cell.col); // for each iteration of the previous for loop, it counts how many cells there are around it
-  //console.log(surroundingCells);
+  //console.log(surroundingCells); // for reference purposes > shows number of cell with cells surrounding it
 
-  var count = 0;
+  var count = 0; // declaring the variable count with a starting point of 0
 
-  for (var j = 0; j < surroundingCells.length; j ++){
-    if (surroundingCells[j].isMine) { // the same as saying surroundingCells[j].isMine === true
-      //console.log(j);
-      count ++;
+  for (var j = 0; j < surroundingCells.length; j ++){ // loops through by the number of surroundingCells
+    if (surroundingCells[j].isMine) { // if that particular surroundingCells[j] isMine property === true
+      count ++; // add 1 iteration to the count variable
+      //console.log(j); // for reference purposes
     }
   }
   return count;
