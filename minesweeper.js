@@ -102,7 +102,7 @@ function checkForWin () {
       return; // exit this function
     }
   }
-  lib.displayMessage('You win!'); // once all cells are accounted for, you win
+  lib.displayMessage('You win!'); // once BOTH these conditions have been met (by completing the for loop to the length of cell objects in the array - thus counting all cells as meeting the conditions), you win
 }
 
 // Define this function to count the number of mines around the cell
