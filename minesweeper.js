@@ -7,6 +7,9 @@ document.addEventListener('DOMContentLoaded', startGame)
 
 var allCellsArray = board.cells; //declaring a variable for the array that holds the objects/cells
 
+var numberOfCellsAcross = prompt('How many cells across would you like?','Give a number between 3 and 6');
+console.log(numberOfCellsAcross);
+
 function boardSize (numberOfCellsAcross) { // width and height will be the same
   for (var xRow = 0; xRow < numberOfCellsAcross; xRow ++) {
     for (var yCol = 0; yCol < numberOfCellsAcross; yCol ++) {
@@ -23,7 +26,15 @@ function boardSize (numberOfCellsAcross) { // width and height will be the same
   }
 
 }
-boardSize(4);
+boardSize(numberOfCellsAcross);
+
+// function resetBoard (evt) {
+//   for (var xRow = 0; xRow < numberOfCellsAcross; xRow ++) {
+//     for (var yCol = 0; yCol < numberOfCellsAcross; yCol ++) {
+//       var resetCellObject = {
+//         isMarked: false, //starts with cell unmarked
+//         hidden: true, // starts with cell hidden
+// }
 
 function startGame () {
   // Don't remove this function call: it makes the game work!
