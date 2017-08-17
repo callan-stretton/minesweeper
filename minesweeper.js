@@ -2,73 +2,28 @@ document.addEventListener('DOMContentLoaded', startGame)
 
 // Define your `board` object here!
  var board = {
-   cells: [
-     { //1
-       hidden: true,
-       row: 0,
-       col: 0,
-       isMine: false
-     },
-     { //2
-       hidden: true,
-       row: 0,
-       col: 1,
-       isMine: false
-     },
-     { //3
-       hidden: true,
-       row: 0,
-       col: 2,
-       isMine: false
-     },
-     { //4
-       hidden: true,
-       row: 1,
-       col: 0,
-       isMine: false
-     },
-     { //5
-       hidden: true,
-       row: 1,
-       col: 1,
-       isMine: false
-     },
-     { //6
-       hidden: true,
-       row: 1,
-       col: 2,
-       isMine: true
-     },
-     { //7
-       hidden: true,
-       row: 2,
-       col: 0,
-       isMine: true
-     },
-     { //8
-       hidden: true,
-       row: 2,
-       col: 1,
-       isMine: false
-     },
-     { //9
-       hidden: true,
-       row: 2,
-       col: 2,
-       isMine: false
-     }
-   ]
+   cells: []
  }
- /*
- Looks Like:
- 1 | 2 | 3
----+---+---
- 4 | 5 | 6
----+---+---
- 7 | 8 | 9
- */
 
 var allCellsArray = board.cells; //declaring a variable for the array that holds the objects/cells
+
+function boardSize (numberOfCellsAcross) { // width and height will be the same
+  for (var xRow = 0; xRow < numberOfCellsAcross; xRow ++) {
+    for (var yCol = 0; yCol < numberOfCellsAcross; yCol ++) {
+      var cellObject = {
+        row: xRow,
+        col: yCol,
+        isMine: Math.random() < 0.33, // 1/3 chance this cell will have a mine
+        isMarked: false, //starts with cell unmarked
+        hidden: true, // starts with cell hidden
+      }
+      console.log(cellObject); //for reference purposes
+      allCellsArray.push(cellObject); // push this cellObject into the board.cells array
+    }
+  }
+
+}
+boardSize(4);
 
 function startGame () {
   // Don't remove this function call: it makes the game work!
