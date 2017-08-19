@@ -10,7 +10,6 @@ var allCellsArray = board.cells; //declaring a variable for the array that holds
 var numberOfCellsAcross = prompt('How many cells across would you like?','Give a number between 3 and 6');
 console.log('User entered ' + numberOfCellsAcross + ' cells across.'); // for reference purposes
 
-
 function resetGame() {
   console.log('Need to code the reset');
 }
@@ -30,9 +29,7 @@ function boardSize (numberOfCellsAcross) { // width and height will be the same
     }
   }
 }
-
 boardSize(numberOfCellsAcross); // prompt answer goes in here
-
 
 
 function startGame () {
@@ -46,6 +43,8 @@ function startGame () {
   }
   lib.initBoard()
 }
+
+var clapS = document.getElementById('clapS');
 
 // Win condition checks:
 // 1. Are all of the cells that are NOT mines visible?
@@ -61,6 +60,7 @@ function checkForWin () {
       return; // exit this function
     }
   }
+  clapS.play();
   lib.displayMessage('You win!'); // once BOTH these conditions have been met (by completing the for loop to the length of cell objects in the array - thus counting all cells as meeting the conditions), you win
 }
 
