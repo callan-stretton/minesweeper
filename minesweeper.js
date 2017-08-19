@@ -8,7 +8,12 @@ document.addEventListener('DOMContentLoaded', startGame)
 var allCellsArray = board.cells; //declaring a variable for the array that holds the objects/cells
 
 var numberOfCellsAcross = prompt('How many cells across would you like?','Give a number between 3 and 6');
-console.log(numberOfCellsAcross);
+console.log('User entered ' + numberOfCellsAcross + ' cells across.'); // for reference purposes
+
+
+function resetGame() {
+  console.log('Need to code the reset');
+}
 
 function boardSize (numberOfCellsAcross) { // width and height will be the same
   for (var xRow = 0; xRow < numberOfCellsAcross; xRow ++) {
@@ -24,39 +29,27 @@ function boardSize (numberOfCellsAcross) { // width and height will be the same
       allCellsArray.push(cellObject); // push this cellObject into the board.cells array
     }
   }
-
 }
-boardSize(numberOfCellsAcross);
 
-// function resetBoard (evt) {
-//   for (var xRow = 0; xRow < numberOfCellsAcross; xRow ++) {
-//     for (var yCol = 0; yCol < numberOfCellsAcross; yCol ++) {
-//       var resetCellObject = {
-//         isMarked: false, //starts with cell unmarked
-//         hidden: true, // starts with cell hidden
-// }
+boardSize(numberOfCellsAcross); // prompt answer goes in here
+
+
 
 function startGame () {
   // Don't remove this function call: it makes the game work!
   document.addEventListener('click', checkForWin);
   document.addEventListener('contextmenu', checkForWin);
-  //document.addEventListener('click', checkForWin());
-  //document.addEventListener('contextmenu', checkForWin());
 
   for (var i = 0; i < allCellsArray.length; i ++){ // loops through by the number of objects/cells in the array
     //console.log(allCellsArray[i]); // console.logs the current object/cell within the array - for reference
     allCellsArray[i].surroundingMines = countSurroundingMines(allCellsArray[i]); // creates a surroundingMines property with the results of the countSurroundingMines function
   }
-
-
   lib.initBoard()
 }
 
-// Define this function to look for a win condition:
-//
+// Win condition checks:
 // 1. Are all of the cells that are NOT mines visible?
 // 2. Are all of the mines marked?
-
 function checkForWin () {
 
   for (var i = 0; i < allCellsArray.length; i ++){

@@ -3,13 +3,28 @@
   <head>
     <title>Minesweeper</title>
     <link rel="stylesheet" href="minesweeper.css">
-    <script src="lib/tests.js"></script>
-    <script src="lib/lib.js"></script>
-    <script src="minesweeper.js"></script>
   </head>
   <body>
     <div id="message"></div>
     <div id="notes"></div>
+    <div id="reset">
+      <input type="button" value="Reset this game" onClick="resetGame()"/>
+    </div>
     <div class="board"></div>
+
+      <audio id="boomS">
+  	     <source src="sound/explosionSound.mp3" type="audio/mp3"></source>
+      </audio>
+      <audio id="appearS">
+   	     <source src="sound/visibleSound.mp3" type="audio/mp3"></source>
+      </audio>
+      <audio id="markS">
+    	     <source src="sound/markedSound.mp3" type="audio/mp3"></source>
+      </audio>
+
+<!-- I had to put the scripts down here for the audio to work as the HTML audio tags wouldn't have been loaded yet. -->
+    <script src="lib/tests.js"></script>
+    <script src="lib/lib.js"></script>
+    <script src="minesweeper.js"></script>
   </body>
 </html>
