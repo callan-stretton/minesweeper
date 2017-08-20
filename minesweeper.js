@@ -10,9 +10,10 @@ var allCellsArray = board.cells; //declaring a variable for the array that holds
 var numberOfCellsAcross = prompt('How many cells across would you like?','Give a number between 3 and 6');
 console.log('User entered ' + numberOfCellsAcross + ' cells across.'); // for reference purposes
 
-function resetGame() {
-  console.log('Need to code the reset');
-}
+// function resetGame() {
+//   console.log('Need to code the reset');
+//   lib.initBoard();
+// }
 
 function boardSize (numberOfCellsAcross) { // width and height will be the same
   for (var xRow = 0; xRow < numberOfCellsAcross; xRow ++) {
@@ -44,6 +45,7 @@ function startGame () {
   lib.initBoard()
 }
 
+//sound applause
 var clapS = document.getElementById('clapS');
 
 // Win condition checks:
