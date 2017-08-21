@@ -62,6 +62,6 @@ div.hidden:hover {
   background: #434343;
 }
 
-div.marked, div.marked:hover {
+div.marked, div.marked:hover { 
   background: no-repeat center/55% url("images/mark.svg") orange;
 }
