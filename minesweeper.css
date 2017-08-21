@@ -8,16 +8,23 @@ body {
   align-items: center;
   justify-content: flex-center;
   flex-direction: column;
+  background: #393939;
 }
 
 #message, #notes {
   display: flex;
   flex-direction: column;
   align-items: center;
+  color: white;
 }
 
 #message {
   font-size: 1.5rem;
+  color: white;
+}
+
+#sound {
+  color: #b6b6b6;
 }
 
 .board {
@@ -26,13 +33,13 @@ body {
 }
 
 .board div {
-  color: green;
+  color: orange;
   font-size: 2rem;
   width: 75px;
   height: 75px;
-  border: 1px #ccc dotted;
+  border: 1px #7e7e7e solid;
   border-radius: 10%;
-  background-color: white;
+  background-color: #525252;
   margin: 3px;
   display: flex;
   align-items: center;
@@ -40,7 +47,7 @@ body {
 }
 
 .board div:hover {
-  background-color: white;
+  background-color: #6e6e6e;
 }
 
 div.mine, div.mine:hover {
@@ -48,11 +55,11 @@ div.mine, div.mine:hover {
 }
 
 div.hidden {
-  background: #eee;
+  background: #272727;
 }
 
 div.hidden:hover {
-  background: #ccc;
+  background: #434343;
 }
 
 div.marked, div.marked:hover {
