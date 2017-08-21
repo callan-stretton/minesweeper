@@ -21,7 +21,7 @@ function boardSize (numberOfCellsAcross) { // width and height will be the same
       var cellObject = {
         row: xRow,
         col: yCol,
-        isMine: Math.random() < 0.33, // 1/3 chance this cell will have a mine
+        isMine: Math.random() < (1/numberOfCellsAcross), // the probability ratio that this cell will have a mine
         isMarked: false, //starts with cell unmarked
         hidden: true, // starts with cell hidden
       }
