@@ -10,10 +10,17 @@ var allCellsArray = board.cells; //declaring a variable for the array that holds
 var numberOfCellsAcross = prompt('How many cells across would you like?','Give a number between 3 and 6');
 console.log('User entered ' + numberOfCellsAcross + ' cells across.'); // for reference purposes
 
-// function resetGame() {
-//   console.log('Need to code the reset');
-//   lib.initBoard();
-// }
+mineCountModerator();
+
+function mineCountModerator () {
+  boardSize (numberOfCellsAcross); // prompt answer goes in here
+  totalMineCount();
+  while ((totalMineCount() < numberOfCellsAcross) || (totalMineCount() > ((2/3) * allCellsArray.length))) {
+    console.log("Mine count too low or too high, re-drawing board.");
+    allCellsArray.length = 0;
+    boardSize (numberOfCellsAcross);
+  }
+}
 
 function boardSize (numberOfCellsAcross) { // width and height will be the same
   for (var xRow = 0; xRow < numberOfCellsAcross; xRow ++) {
@@ -30,18 +37,6 @@ function boardSize (numberOfCellsAcross) { // width and height will be the same
     }
   }
 }
-//boardSize(numberOfCellsAcross); // prompt answer goes in here
-mineCountModerator();
-
-function mineCountModerator () {
-  boardSize (numberOfCellsAcross);
-  totalMineCount();
-  while ((totalMineCount() < numberOfCellsAcross) || (totalMineCount() === allCellsArray.length)) {
-    console.log("less than parameter");
-    allCellsArray.length = 0;
-    boardSize (numberOfCellsAcross);
-  }
-}
 
 function totalMineCount () {
   var mineCount = 0;
@@ -52,6 +47,13 @@ function totalMineCount () {
   }
   return mineCount;
 }
+
+/*
+function resetBoard (evt) {
+  allCellsArray.length = 0;
+  mineCountModerator();
+}
+*/
 
 function startGame () {
   // Don't remove this function call: it makes the game work!
