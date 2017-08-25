@@ -30,8 +30,28 @@ function boardSize (numberOfCellsAcross) { // width and height will be the same
     }
   }
 }
-boardSize(numberOfCellsAcross); // prompt answer goes in here
+//boardSize(numberOfCellsAcross); // prompt answer goes in here
+mineCountModerator();
 
+function mineCountModerator () {
+  boardSize (numberOfCellsAcross);
+  totalMineCount();
+  while ((totalMineCount() < numberOfCellsAcross) || (totalMineCount() === allCellsArray.length)) {
+    console.log("less than parameter");
+    allCellsArray.length = 0;
+    boardSize (numberOfCellsAcross);
+  }
+}
+
+function totalMineCount () {
+  var mineCount = 0;
+  for (var i = 0; i < allCellsArray.length; i ++){
+    if (allCellsArray[i].isMine) {
+      mineCount ++;
+    }
+  }
+  return mineCount;
+}
 
 function startGame () {
   // Don't remove this function call: it makes the game work!
